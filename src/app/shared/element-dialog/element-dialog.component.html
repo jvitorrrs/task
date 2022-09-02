@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Create</h1>
+  <form [formGroup]="form">
+    <div mat-dialog-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="fName" required>
+        <mat-error *ngIf="fName.invalid">Preencha o nome.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Weight</mat-label>
+        <input matInput [formControl]="fWeight" required>      
+        <mat-error *ngIf="fWeight.invalid">Preencha o peso.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Symbol</mat-label>
+        <input matInput  [formControl]="fSymbol" required>
+        <mat-error *ngIf="fSymbol.invalid">Preencha o símbolo.</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button (click)="onSubmit(this)" type="submit">Create</button>
+  </div>
+
